@@ -12,186 +12,191 @@
 
 /* ===== RESET ===== */
 * {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* ===== VARIABLES ===== */
 :root {
-  --red:#9E1717;
-  --gold:#CC9E5F;
-  --ivory:#FDF8F5;
-  --dark:#222;
+  --red: #9E1717;
+  --gold: #CC9E5F;
+  --ivory: #FDF8F5;
+  --dark: #222;
 }
 
 /* ===== BODY ===== */
 body {
-  font-family:'Poppins', sans-serif;
-  background:var(--ivory);
-  color:var(--dark);
+  font-family: 'Poppins', sans-serif;
+  background: var(--ivory);
+  color: var(--dark);
 }
 
 /* ===== CONTAINER ===== */
 .container {
-  width:90%;
-  max-width:1200px;
-  margin:auto;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* ===== NAVBAR ===== */
 .navbar {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
 }
 
 .logo {
-  font-weight:600;
-  font-size:18px;
+  font-weight: 600;
+  font-size: 18px;
 }
 
+/* ===== BUTTONS ===== */
 .btn {
-  background:var(--red);
-  color:white;
-  padding:12px 24px;
-  text-decoration:none;
-  border-radius:4px;
-  transition:0.3s;
+  background: var(--red);
+  color: white;
+  padding: 12px 26px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: 0.3s;
 }
 
 .btn:hover {
-  transform:translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .btn-gold {
-  background:var(--gold);
-  color:black;
+  background: var(--gold);
+  color: black;
 }
 
 /* ===== HERO ===== */
 .hero {
-  position:relative;
-  height:90vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  overflow:hidden;
+  position: relative;
+  min-height: 90vh;
+
+  background-image: url('./assets/afas.jpg'); /* YOUR IMAGE */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.hero video {
-  position:absolute;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  top:0;
-  left:0;
-  z-index:-2;
-}
-
+/* Overlay */
 .hero-overlay {
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.5);
-  z-index:-1;
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
 }
 
+/* Content */
 .hero-content {
-  color:white;
-  padding:20px;
-  max-width:700px;
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 700px;
+  padding: 20px;
 }
 
+/* Typography */
 .hero h1 {
-  font-family:'Playfair Display', serif;
-  font-size:56px;
-  line-height:1.2;
-}
-
-.gold {
-  color:var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  line-height: 1.2;
 }
 
 .hero p {
-  margin:20px 0;
+  margin: 20px 0;
+}
+
+.gold {
+  color: var(--gold);
 }
 
 /* ===== SECTION ===== */
 .section {
-  padding:80px 0;
-  text-align:center;
+  padding: 80px 0;
+  text-align: center;
 }
 
 .section h2 {
-  font-family:'Playfair Display', serif;
-  color:var(--red);
-  margin-bottom:20px;
+  font-family: 'Playfair Display', serif;
+  color: var(--red);
+  margin-bottom: 20px;
 }
 
 /* ===== FEATURES ===== */
 .features {
-  display:flex;
-  gap:40px;
-  justify-content:center;
-  flex-wrap:wrap;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .feature {
-  max-width:250px;
+  max-width: 250px;
 }
 
 /* ===== CTA ===== */
 .cta {
-  background:var(--red);
-  color:white;
+  background: var(--red);
+  color: white;
 }
 
 /* ===== FLOAT BUTTON ===== */
 .whatsapp {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:12px 18px;
-  border-radius:50px;
-  text-decoration:none;
-}
-
-/* ===== ANIMATION ===== */
-.fade {
-  opacity:0;
-  transform:translateY(30px);
-  animation:fadeUp 1s forwards;
-}
-
-@keyframes fadeUp {
-  to {
-    opacity:1;
-    transform:translateY(0);
-  }
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50px;
+  text-decoration: none;
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width:768px) {
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 42px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero {
+    min-height: 70vh;
+    padding: 20px;
+  }
 
   .hero h1 {
-    font-size:36px;
+    font-size: 32px;
   }
 
   .features {
-    flex-direction:column;
-    align-items:center;
+    flex-direction: column;
+    align-items: center;
   }
+}
 
-  .navbar {
-    flex-direction:column;
-    gap:10px;
+/* Small Mobile */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 26px;
   }
-
 }
 
 </style>
@@ -203,19 +208,14 @@ body {
 <!-- NAVBAR -->
 <div class="container navbar">
   <div class="logo">Ferragifts</div>
-  <a href="https://wa.me/85294984668" class="btn btn-gold">Get Quote</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
 
-  <video autoplay muted loop playsinline>
-    <source src="your-video.mp4" type="video/mp4">
-  </video>
-
   <div class="hero-overlay"></div>
 
-  <div class="hero-content fade">
+  <div class="hero-content">
     <p>Premium Corporate Gifting</p>
 
     <h1>
@@ -228,7 +228,7 @@ body {
     </p>
 
     <a href="https://wa.me/85294984668?text=Hi%20I%20want%20corporate%20gifts" class="btn">
-      Get Quote on WhatsApp
+      Let's Connect
     </a>
   </div>
 
@@ -242,17 +242,17 @@ body {
 
     <div class="features">
 
-      <div class="feature fade">
+      <div class="feature">
         <h3 class="gold">Custom Hampers</h3>
         <p>Premium curated gifting experiences.</p>
       </div>
 
-      <div class="feature fade">
+      <div class="feature">
         <h3 class="gold">Brand Merchandise</h3>
         <p>Elegant branded corporate products.</p>
       </div>
 
-      <div class="feature fade">
+      <div class="feature">
         <h3 class="gold">Bulk Orders</h3>
         <p>Seamless execution for large orders.</p>
       </div>
@@ -268,16 +268,14 @@ body {
 
     <h2>Let’s Create Something Exceptional</h2>
     <p>Tell us your requirements and we’ll handle the rest.</p>
-
-    <a href="https://wa.me/85294984668?text=Hi%20I%20want%20corporate%20gifts" 
-       class="btn btn-gold">
-       Chat on WhatsApp
-    </a>
+    <div>
+    
+    </div>
 
   </div>
 </section>
 
-<!-- FLOAT -->
+<!-- FLOAT BUTTON -->
 <a href="https://wa.me/85294984668" class="whatsapp">
   WhatsApp
 </a>
