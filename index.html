@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Ferragifts</title>
+<link rel="icon" type="image/svg+xml" href="./assets/logo.svg">
 
-<!-- FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -31,6 +31,35 @@ body {
   font-family: 'Poppins', sans-serif;
   background: var(--ivory);
   color: var(--dark);
+  overflow-x: hidden;
+}
+
+/* ===== LOADER ===== */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: var(--ivory);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+.loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader img {
+  width: 80px;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.6; }
 }
 
 /* ===== CONTAINER ===== */
@@ -40,164 +69,172 @@ body {
   margin: auto;
 }
 
-/* ===== NAVBAR ===== */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-}
-
-/* ===== LOGO ===== */
-.logo img {
-  height: 42px;
-  width: auto;
-  display: block;
-}
-
 /* ===== BUTTON ===== */
 .btn {
   background: var(--red);
-  color: white;
+  color: var(--ivory);
   padding: 12px 26px;
   text-decoration: none;
   border-radius: 4px;
   transition: 0.3s;
+  display: inline-block;
 }
 
 .btn:hover {
   transform: translateY(-2px);
 }
 
+.btn-light {
+  background: var(--ivory);
+  color: var(--red);
+}
+
 /* ===== HERO ===== */
 .hero {
-  position: relative;
-  min-height: 90vh;
-
-  background-image: url('./assets/afas.jpg');
-  background-size: cover;
-  background-position: center;
-
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  min-height: 100vh;
+  gap: 40px;
 }
 
-/* Overlay */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
+.hero-left {
+  padding: 40px;
 }
 
-/* Content */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  color: white;
-  max-width: 700px;
-  padding: 20px;
+.hero-sub {
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
 }
 
-/* ===== TYPOGRAPHY ===== */
 .hero h1 {
   font-family: 'Instrument Serif', serif;
   font-size: 64px;
-  line-height: 1.1;
   font-weight: 400;
-  letter-spacing: -0.5px;
+  margin-bottom: 20px;
 }
 
-.hero p {
-  margin: 20px 0;
-  font-size: 15px;
-  letter-spacing: 0.5px;
+.hero-desc {
+  font-size: 14px;
+  max-width: 420px;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 16px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.15);
 }
 
 .gold {
   color: var(--gold);
 }
 
-/* ===== SECTION ===== */
+/* ===== SECTIONS ===== */
 .section {
-  padding: 80px 0;
+  padding: 120px 0;
   text-align: center;
 }
 
-.section h2 {
+.section.red {
+  background: var(--red);
+  color: var(--ivory);
+}
+
+.section.ivory {
+  background: var(--ivory);
+}
+
+/* ===== HEADINGS ===== */
+.section-title {
   font-family: 'Instrument Serif', serif;
-  font-weight: 400;
-  color: var(--red);
-  margin-bottom: 20px;
-  font-size: 36px;
+  font-size: 48px;
+  margin-bottom: 60px;
 }
 
 /* ===== FEATURES ===== */
 .features {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.feature {
-  max-width: 250px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
 }
 
 .feature h3 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 26px;
   margin-bottom: 10px;
 }
 
-/* ===== CTA ===== */
-.cta {
-  background: var(--red);
-  color: white;
+.feature p {
+  font-size: 14px;
+  opacity: 0.85;
 }
 
-/* ===== FLOAT BUTTON ===== */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 50px;
-  text-decoration: none;
+/* ===== CTA FIX ===== */
+.cta-wrap {
+  max-width: 800px;
+  margin: auto;
+}
+
+.cta-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 56px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.cta-sub {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+/* ===== ANIMATION ===== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
-  .hero h1 {
-    font-size: 48px;
-  }
-}
-
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 10px;
-  }
 
   .hero {
-    min-height: 70vh;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-left {
     padding: 20px;
   }
 
-  .hero h1 {
-    font-size: 34px;
+  .hero-desc {
+    margin: auto;
   }
 
   .features {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 26px;
+  .section-title {
+    font-size: 32px;
+  }
+
+  .cta-title {
+    font-size: 36px;
   }
 }
 
@@ -206,75 +243,135 @@ body {
 
 <body>
 
-<!-- NAVBAR -->
-<div class="container navbar">
-  <div class="logo">
-    <img src="./assets/logo.svg" alt="Ferragifts Logo">
-  </div>
+<!-- LOADER -->
+<div class="loader">
+  <img src="./assets/logo.svg" alt="logo">
 </div>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-overlay"></div>
+<section class="hero container fade-up">
 
-  <div class="hero-content">
-    <p>Premium Corporate Gifting</p>
+  <div class="hero-left">
+    <div class="hero-sub">COLLECTIONS → CORPORATE GIFTS</div>
 
     <h1>
-      Elevate Your Brand <br>
-      <span class="gold">Through Thoughtful Gifting</span>
+      Premium Corporate <br>
+      <span class="gold">Gifting Solutions</span>
     </h1>
 
-    <p>
+    <p class="hero-desc">
       Custom corporate gifts designed to reflect your brand identity with elegance and impact.
     </p>
 
-    <a href="https://wa.me/85294984668?text=Hi%20I%20want%20corporate%20gifts" class="btn">
-      Let's Connect
-    </a>
+    <a href="#" class="btn">Explore</a>
   </div>
+
+  <div class="hero-right">
+    <img src="./assets/afas.jpg" class="hero-image" alt="">
+  </div>
+
 </section>
 
-<!-- WHAT WE DO -->
-<section class="section">
+<!-- SECTION 1 -->
+<section class="section red fade-up">
   <div class="container">
 
-    <h2>What We Offer</h2>
+    <h2 class="section-title">What We Offer</h2>
 
     <div class="features">
-
       <div class="feature">
         <h3 class="gold">Custom Hampers</h3>
-        <p>Premium curated gifting experiences.</p>
+        <p>Curated gifting experiences designed for impact.</p>
       </div>
 
       <div class="feature">
         <h3 class="gold">Brand Merchandise</h3>
-        <p>Elegant branded corporate products.</p>
+        <p>Elegant branded products aligned with your identity.</p>
       </div>
 
       <div class="feature">
         <h3 class="gold">Bulk Orders</h3>
-        <p>Seamless execution for large orders.</p>
+        <p>Seamless execution for large-scale gifting.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section class="section ivory fade-up">
+  <div class="container">
+
+    <h2 class="section-title">Why Choose Us</h2>
+
+    <div class="features">
+      <div class="feature">
+        <h3 class="gold">Premium Quality</h3>
+        <p>Only high-end materials and finishing.</p>
       </div>
 
+      <div class="feature">
+        <h3 class="gold">Customization</h3>
+        <p>Tailored solutions for every brand.</p>
+      </div>
+
+      <div class="feature">
+        <h3 class="gold">End-to-End Service</h3>
+        <p>From concept to delivery handled seamlessly.</p>
+      </div>
     </div>
 
   </div>
 </section>
 
 <!-- CTA -->
-<section class="section cta">
-  <div class="container">
-    <h2>Let’s Create Something Exceptional</h2>
-    <p>Tell us your requirements and we’ll handle the rest.</p>
+<section class="section red fade-up">
+
+  <div class="container cta-wrap">
+
+    <h2 class="cta-title">
+      Let’s Create Something Exceptional
+    </h2>
+
+    <p class="cta-sub">
+      Tell us your requirements and we’ll handle the rest.
+    </p>
+
+    <a href="#" class="btn btn-light">
+      Contact Us
+    </a>
+
   </div>
+
 </section>
 
-<!-- FLOAT BUTTON -->
-<a href="https://wa.me/85294984668" class="whatsapp">
-  WhatsApp
-</a>
+<script>
+
+/* loader fade */
+window.addEventListener("load", () => {
+  document.querySelector(".loader").classList.add("hidden");
+});
+
+/* scroll animation */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+</script>
+<script>
+const whatsappURL = "https://wa.me/85294984668?text=Hi%20I%20want%20corporate%20gifts";
+
+document.querySelectorAll('.btn').forEach(btn => {
+  btn.setAttribute('href', whatsappURL);
+  btn.setAttribute('target', '_blank');
+});
+</script>
 
 </body>
 </html>
