@@ -6,7 +6,8 @@
 
 <title>Ferragifts</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -47,12 +48,14 @@ body {
   padding: 20px 0;
 }
 
-.logo {
-  font-weight: 600;
-  font-size: 18px;
+/* ===== LOGO ===== */
+.logo img {
+  height: 42px;
+  width: auto;
+  display: block;
 }
 
-/* ===== BUTTONS ===== */
+/* ===== BUTTON ===== */
 .btn {
   background: var(--red);
   color: white;
@@ -66,20 +69,14 @@ body {
   transform: translateY(-2px);
 }
 
-.btn-gold {
-  background: var(--gold);
-  color: black;
-}
-
 /* ===== HERO ===== */
 .hero {
   position: relative;
   min-height: 90vh;
 
-  background-image: url('./assets/afas.jpg'); /* YOUR IMAGE */
+  background-image: url('./assets/afas.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
 
   display: flex;
   align-items: center;
@@ -103,15 +100,19 @@ body {
   padding: 20px;
 }
 
-/* Typography */
+/* ===== TYPOGRAPHY ===== */
 .hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 56px;
-  line-height: 1.2;
+  font-family: 'Instrument Serif', serif;
+  font-size: 64px;
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -0.5px;
 }
 
 .hero p {
   margin: 20px 0;
+  font-size: 15px;
+  letter-spacing: 0.5px;
 }
 
 .gold {
@@ -125,9 +126,11 @@ body {
 }
 
 .section h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
   color: var(--red);
   margin-bottom: 20px;
+  font-size: 36px;
 }
 
 /* ===== FEATURES ===== */
@@ -140,6 +143,10 @@ body {
 
 .feature {
   max-width: 250px;
+}
+
+.feature h3 {
+  margin-bottom: 10px;
 }
 
 /* ===== CTA ===== */
@@ -161,17 +168,13 @@ body {
 }
 
 /* ===== RESPONSIVE ===== */
-
-/* Tablet */
 @media (max-width: 1024px) {
   .hero h1 {
-    font-size: 42px;
+    font-size: 48px;
   }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
-
   .navbar {
     flex-direction: column;
     gap: 10px;
@@ -183,7 +186,7 @@ body {
   }
 
   .hero h1 {
-    font-size: 32px;
+    font-size: 34px;
   }
 
   .features {
@@ -192,7 +195,6 @@ body {
   }
 }
 
-/* Small Mobile */
 @media (max-width: 480px) {
   .hero h1 {
     font-size: 26px;
@@ -200,19 +202,19 @@ body {
 }
 
 </style>
-
 </head>
 
 <body>
 
 <!-- NAVBAR -->
 <div class="container navbar">
-  <div class="logo">Ferragifts</div>
+  <div class="logo">
+    <img src="./assets/logo.svg" alt="Ferragifts Logo">
+  </div>
 </div>
 
 <!-- HERO -->
 <section class="hero">
-
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
@@ -231,7 +233,6 @@ body {
       Let's Connect
     </a>
   </div>
-
 </section>
 
 <!-- WHAT WE DO -->
@@ -265,13 +266,8 @@ body {
 <!-- CTA -->
 <section class="section cta">
   <div class="container">
-
     <h2>Let’s Create Something Exceptional</h2>
     <p>Tell us your requirements and we’ll handle the rest.</p>
-    <div>
-    
-    </div>
-
   </div>
 </section>
 
