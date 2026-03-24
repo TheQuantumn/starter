@@ -12,11 +12,7 @@
 <style>
 
 /* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 /* ===== VARIABLES ===== */
 :root {
@@ -34,6 +30,31 @@ body {
   overflow-x: hidden;
 }
 
+/* ===== HEADER (NEW) ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 5%;
+  position: relative;
+}
+
+.logo img {
+  width: 50px;
+}
+
+.brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Instrument Serif', serif;
+  font-size: 26px;
+  letter-spacing: 2px;
+}
+
+.brand .gold { color: var(--gold); }
+.brand .red { color: var(--red); }
+
 /* ===== LOADER ===== */
 .loader {
   position: fixed;
@@ -46,10 +67,7 @@ body {
   transition: opacity 0.5s ease;
 }
 
-.loader.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
+.loader.hidden { opacity: 0; pointer-events: none; }
 
 .loader img {
   width: 80px;
@@ -63,11 +81,7 @@ body {
 }
 
 /* ===== CONTAINER ===== */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
+.container { width: 90%; max-width: 1200px; margin: auto; }
 
 /* ===== BUTTON ===== */
 .btn {
@@ -79,10 +93,7 @@ body {
   transition: 0.3s;
   display: inline-block;
 }
-
-.btn:hover {
-  transform: translateY(-2px);
-}
+.btn:hover { transform: translateY(-2px); }
 
 .btn-light {
   background: var(--ivory);
@@ -98,9 +109,7 @@ body {
   gap: 40px;
 }
 
-.hero-left {
-  padding: 40px;
-}
+.hero-left { padding: 40px; }
 
 .hero-sub {
   font-size: 13px;
@@ -122,36 +131,27 @@ body {
   color: #555;
 }
 
-.hero-right {
-  display: flex;
-  justify-content: center;
-}
+.hero-right { display: flex; justify-content: center; height: 600px; }
 
 .hero-image {
   width: 100%;
   max-width: 520px;
   border-radius: 16px;
+  object-fit: cover; 
   box-shadow: 0 25px 70px rgba(0,0,0,0.15);
 }
 
-.gold {
-  color: var(--gold);
-}
+.gold { color: var(--gold); }
 
 /* ===== SECTIONS ===== */
-.section {
-  padding: 120px 0;
-  text-align: center;
-}
+.section { padding: 120px 0; text-align: center; }
 
 .section.red {
   background: var(--red);
   color: var(--ivory);
 }
 
-.section.ivory {
-  background: var(--ivory);
-}
+.section.ivory { background: var(--ivory); }
 
 /* ===== HEADINGS ===== */
 .section-title {
@@ -178,23 +178,45 @@ body {
   opacity: 0.85;
 }
 
-/* ===== CTA FIX ===== */
-.cta-wrap {
-  max-width: 800px;
-  margin: auto;
-}
+/* ===== CTA ===== */
+.cta-wrap { max-width: 800px; margin: auto; }
 
 .cta-title {
   font-family: 'Instrument Serif', serif;
   font-size: 56px;
-  line-height: 1.2;
   margin-bottom: 20px;
 }
 
 .cta-sub {
   font-size: 16px;
-  opacity: 0.9;
   margin-bottom: 30px;
+}
+
+/* ===== FOOTER (NEW) ===== */
+.footer {
+  background: #111;
+  color: #eee;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.footer h3 {
+  font-family: 'Instrument Serif', serif;
+  margin-bottom: 15px;
+}
+
+.footer p { font-size: 14px; margin-bottom: 8px; }
+
+.socials {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.socials a {
+  color: var(--gold);
+  text-decoration: none;
 }
 
 /* ===== ANIMATION ===== */
@@ -217,25 +239,18 @@ body {
     text-align: center;
   }
 
-  .hero-left {
-    padding: 20px;
-  }
-
-  .hero-desc {
-    margin: auto;
+  .brand {
+    position: static;
+    transform: none;
+    margin-top: 10px;
   }
 
   .features {
     grid-template-columns: 1fr;
   }
 
-  .section-title {
-    font-size: 32px;
-  }
-
-  .cta-title {
-    font-size: 36px;
-  }
+  .section-title { font-size: 32px; }
+  .cta-title { font-size: 36px; }
 }
 
 </style>
@@ -245,114 +260,111 @@ body {
 
 <!-- LOADER -->
 <div class="loader">
-  <img src="./assets/logo.svg" alt="logo">
+  <img src="./assets/logo.svg">
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">
+    <img src="./assets/logo1.png">
+  </div>
+
+  <div class="brand">
+    <span class="gold"> F E R R A </span><span class="red"> G I F T S </span>
+  </div>
+
+  <div></div>
 </div>
 
 <!-- HERO -->
 <section class="hero container fade-up">
-
   <div class="hero-left">
     <div class="hero-sub">COLLECTIONS → CORPORATE GIFTS</div>
-
     <h1>
       Premium Corporate <br>
       <span class="gold">Gifting Solutions</span>
     </h1>
-
     <p class="hero-desc">
       Custom corporate gifts designed to reflect your brand identity with elegance and impact.
     </p>
-
     <a href="#" class="btn">Explore</a>
   </div>
 
   <div class="hero-right">
-    <img src="./assets/afas.jpg" class="hero-image" alt="">
+    <img src="./assets/afas.jpg" class="hero-image">
   </div>
-
 </section>
 
-<!-- SECTION 1 -->
+<!-- WHAT WE OFFER -->
 <section class="section red fade-up">
   <div class="container">
-
     <h2 class="section-title">What We Offer</h2>
-
     <div class="features">
       <div class="feature">
         <h3 class="gold">Custom Hampers</h3>
         <p>Curated gifting experiences designed for impact.</p>
       </div>
-
       <div class="feature">
         <h3 class="gold">Brand Merchandise</h3>
         <p>Elegant branded products aligned with your identity.</p>
       </div>
-
       <div class="feature">
         <h3 class="gold">Bulk Orders</h3>
         <p>Seamless execution for large-scale gifting.</p>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- SECTION 2 -->
+<!-- WHY US -->
 <section class="section ivory fade-up">
   <div class="container">
-
     <h2 class="section-title">Why Choose Us</h2>
-
     <div class="features">
       <div class="feature">
         <h3 class="gold">Premium Quality</h3>
         <p>Only high-end materials and finishing.</p>
       </div>
-
       <div class="feature">
         <h3 class="gold">Customization</h3>
         <p>Tailored solutions for every brand.</p>
       </div>
-
       <div class="feature">
         <h3 class="gold">End-to-End Service</h3>
         <p>From concept to delivery handled seamlessly.</p>
       </div>
     </div>
-
   </div>
 </section>
 
 <!-- CTA -->
 <section class="section red fade-up">
-
   <div class="container cta-wrap">
-
-    <h2 class="cta-title">
-      Let’s Create Something Exceptional
-    </h2>
-
-    <p class="cta-sub">
-      Tell us your requirements and we’ll handle the rest.
-    </p>
-
-    <a href="#" class="btn btn-light">
-      Contact Us
-    </a>
-
+    <h2 class="cta-title">Let’s Create Something Exceptional</h2>
+    <p class="cta-sub">Tell us your requirements and we’ll handle the rest.</p>
+    <a href="#" class="btn btn-light">Contact Us</a>
   </div>
-
 </section>
 
-<script>
+<!-- FOOTER -->
+<div class="footer">
+  <h3>Ferragifts</h3>
+  <p>Email: jay@ferragifts.com</p>
+  <p>Phone: +852 94984668</p>
 
-/* loader fade */
+  <div class="socials">
+    <a href="https://www.facebook.com/p/Ferra-Gifts-61586374987376/?wa_status_inline=true&ref=1">Facebook</a>
+
+    <a href="https://www.instagram.com/ferragifts/">Instagram</a>
+  </div>
+</div>
+
+<!-- SCRIPTS (UNCHANGED) -->
+<script>
 window.addEventListener("load", () => {
   document.querySelector(".loader").classList.add("hidden");
 });
 
-/* scroll animation */
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
@@ -362,32 +374,23 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
 </script>
+
 <script>
 const whatsappURL = "https://wa.me/85294984668?text=Hi%20I%20want%20corporate%20gifts";
-
 document.querySelectorAll('.btn').forEach(btn => {
   btn.setAttribute('href', whatsappURL);
   btn.setAttribute('target', '_blank');
 });
 </script>
+
 <script>
 window.addEventListener("load", () => {
   const loader = document.querySelector(".loader");
-
-  // delay (in ms)
-  const delay = 1200; // 1.2 seconds (adjust if needed)
-
   setTimeout(() => {
     loader.classList.add("hidden");
-
-    // optional: remove from DOM after fade
-    setTimeout(() => {
-      loader.style.display = "none";
-    }, 500);
-
-  }, delay);
+    setTimeout(() => loader.style.display = "none", 500);
+  }, 1200);
 });
 </script>
 
