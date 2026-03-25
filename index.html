@@ -372,18 +372,148 @@ body {
   </div>
 </section>
 
-<!-- FOOTER -->
-<div class="footer">
-  <h3>Ferragifts</h3>
-  <p>Email: jay@ferragifts.com</p>
-  <p>Phone: +852 94984668</p>
+<footer class="footer">
+  <div class="footer-content">
 
-  <div class="socials">
-    <a href="https://www.facebook.com/p/Ferra-Gifts-61586374987376/?wa_status_inline=true&ref=1">Facebook</a>
+    <!-- Contact -->
+    <div class="footer-contact">
+      <h3 class="footer-title">Get in Touch</h3>
+      <p>jay@ferragifts.com</p>
+      <p>+852 9498 4668</p>
+    </div>
 
-    <a href="https://www.instagram.com/ferragifts/">Instagram</a>
+    <!-- Social Icons -->
+    <div class="footer-socials-wrap">
+      <h3 class="footer-title">Socials</h3>
+      <div class="footer-socials">
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/FERRAGIFTS" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="17" cy="7" r="1" fill="currentColor"/>
+          </svg>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/p/Ferra-Gifts-61586374987376/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13 22V12h3l1-4h-4V6c0-1 0-2 2-2h2V1h-3c-4 0-5 2-5 5v2H6v4h3v10h4z"/>
+          </svg>
+        </a>
+
+      </div>
+    </div>
+
   </div>
-</div>
+
+  <!-- Background Text -->
+  <div class="footer-bg-text">F E R R A G I F T S</div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    © 2025 FerraGifts. All rights reserved.
+  </div>
+</footer>
+
+<style>
+.footer {
+  position: relative;
+  background: #2B2B2B;
+  color: #ffffff;
+  padding: 80px 40px 40px;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Layout */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+/* Titles */
+.footer-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+/* Contact */
+.footer-contact p {
+  margin: 5px 0;
+  color: #cccccc;
+  font-size: 14px;
+}
+
+/* Socials */
+.footer-socials-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-socials a {
+  color: #C49A5A;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+}
+
+.footer-socials svg {
+  width: 100%;
+  height: 100%;
+}
+
+.footer-socials a:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* Background Text */
+.footer-bg-text {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22vw;
+  font-weight: 900;
+  color: #C49A5A;
+  opacity: 0.08;
+  white-space: nowrap;
+  pointer-events: none;
+  font-family: 'Instrument Serif', serif;
+}
+
+/* Bottom */
+.footer-bottom {
+  margin-top: 60px;
+  font-size: 12px;
+  color: #aaaaaa;
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-bg-text {
+    font-size: 28vw;
+  }
+}
+</style>
 
 <!-- SCRIPTS (UNCHANGED) -->
 <script>
