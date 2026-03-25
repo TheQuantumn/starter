@@ -363,6 +363,7 @@ body {
   </div>
 </section>
 
+
 <!-- CTA -->
 <section class="section red fade-up">
   <div class="container cta-wrap">
@@ -402,6 +403,12 @@ body {
             <path d="M13 22V12h3l1-4h-4V6c0-1 0-2 2-2h2V1h-3c-4 0-5 2-5 5v2H6v4h3v10h4z"/>
           </svg>
         </a>
+        <!-- WhatsApp -->
+<a href="https://wa.me/85294984668" target="_blank">
+  <svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.54 0 .28 5.26.28 11.77c0 2.08.54 4.1 1.57 5.89L0 24l6.53-1.71a11.7 11.7 0 005.52 1.41h.01c6.51 0 11.77-5.26 11.77-11.77 0-3.15-1.23-6.11-3.31-8.45zM12.06 21.3h-.01a9.52 9.52 0 01-4.85-1.33l-.35-.21-3.87 1.01 1.03-3.77-.23-.38a9.5 9.5 0 01-1.46-5.05c0-5.26 4.28-9.54 9.55-9.54 2.55 0 4.95.99 6.75 2.79a9.46 9.46 0 012.79 6.75c0 5.27-4.28 9.55-9.55 9.55zm5.23-7.13c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.33.21-.62.07-.29-.14-1.23-.45-2.34-1.43-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.12-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.56-.46-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 1-.99 2.44.01 1.44 1.03 2.83 1.17 3.02.14.19 2.01 3.07 4.87 4.3.68.29 1.21.46 1.63.59.69.22 1.31.19 1.8.12.55-.08 1.7-.69 1.94-1.35.24-.66.24-1.22.17-1.34-.07-.12-.26-.19-.55-.33z"/>
+  </svg>
+</a>
 
       </div>
     </div>
@@ -554,6 +561,65 @@ window.addEventListener("load", () => {
   }, 1200);
 });
 </script>
+<!-- ADD THIS JUST BEFORE </body> -->
+
+<!-- FLOATING CONTACT BUTTONS -->
+<div class="floating-buttons">
+
+  <!-- Chat With Us -->
+  <a href="https://wa.me/85294984668?text=Hi%20I%20want%20corporate%20gifts" target="_blank" class="float-btn whatsapp">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <!-- Chat bubble icon -->
+      <path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H8l-4 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm2 5h12v2H6V9zm0 4h8v2H6v-2z"/>
+    </svg>
+  </a>
+
+</div> 
+
+  
+
+</div>
+
+<style>
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+.float-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #C49A5A;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.float-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.float-btn:hover {
+  transform: translateY(-3px);
+  background: #ffffff;
+  color: #C49A5A;
+}
+
+.float-btn.chat {
+  font-size: 22px;
+}
+</style>
 
 </body>
 </html>
